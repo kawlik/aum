@@ -59,8 +59,12 @@ export class TestNeuron {
         const { inputs, output } = this.dataset[index];
 
         const numeric = this.spicies.indexOf(output);
-        const predict = Math.round(result);
+        const predict = this.spicies[Math.round(result)];
 
-        console.log('inputs:', inputs, 'output', output, 'output (numeric)', numeric, 'predict', predict, 'predict (numeric)', result);
+        console.log();
+        console.log('inputs:', inputs,)
+        console.log('\t', ' expected output:', output, '\t expected output (numeric):', numeric);
+        console.log('\t', 'predicted output:', predict, '\tpredicted output (numeric):', result);
+        console.log();
     }
 }
